@@ -8,7 +8,6 @@ const About = forwardRef(function About(props, ref) {
         <Box
             ref={ref}
             {...props}
-            id="about"
         >
             <Typography
                 variant="h4"

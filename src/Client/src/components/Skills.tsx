@@ -134,7 +134,7 @@ const technologies: Skill[] = [
 
 function Skills() {
     return (
-        <Box id="skills">
+        <Box>
             <Box
                 sx={{
                     display: "flex",

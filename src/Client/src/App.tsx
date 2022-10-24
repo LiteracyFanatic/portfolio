@@ -7,18 +7,14 @@ import { KeyboardArrowUp } from "@mui/icons-material";
 import {
     createTheme,
     CssBaseline,
-    Divider,
     Fab,
-    Fade,
-    Grow,
-    Slide,
     Stack,
     ThemeProvider,
     useScrollTrigger,
     Zoom
 } from "@mui/material";
 import { Container } from "@mui/material";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 import About from "./components/About";
 import Header from "./components/Header";
@@ -41,11 +37,15 @@ const theme = createTheme(defaultTheme, {
     components: {
         MuiCssBaseline: {
             styleOverrides: {
-                html: {
-                    scrollPaddingTop: `calc(${defaultTheme.mixins.toolbar.minHeight}px + ${defaultTheme.spacing(2)})`
+                ":target::before" : {
+                    content: "''",
+                    display: "block",
+                    height: `calc(${defaultTheme.mixins.toolbar.minHeight}px + ${defaultTheme.spacing(2)})`,
+                    marginTop: `calc(-${defaultTheme.mixins.toolbar.minHeight}px - ${defaultTheme.spacing(2)})`
                 },
                 body: {
                     backgroundColor: defaultTheme.palette.grey[200]
+
                 }
             }
         }
@@ -54,6 +54,13 @@ const theme = createTheme(defaultTheme, {
 
 function App() {
     const trigger = useScrollTrigger({ disableHysteresis: true });
+
+    const sections = [
+        { Component: About, Id: "about" },
+        { Component: Projects, Id: "projects" },
+        { Component: Skills, Id: "skills" },
+        { Component: Links, Id: "links" }
+    ];
 
     return (
         <ThemeProvider theme={theme}>
@@ -66,13 +73,36 @@ function App() {
                     }}
                 >
                     <Stack
-                        spacing={4}
+                        spacing={12}
                         alignItems="center"
+                        component={motion.div}
                     >
-                        <About />
-                        <Projects />
-                        <Skills />
-                        <Links />
+                        {sections.map((section, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{
+                                    opacity: 0,
+                                    scale: 0
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    scale: 1
+                                }}
+                                transition={{
+                                    duration: 0.7
+                                }}
+                                viewport={{
+                                    once: true,
+                                    margin: `${theme.mixins.toolbar.minHeight}px`
+                                }}
+                                style={{
+                                    maxWidth: "min(800px, 100%)"
+                                }}
+                            >
+                                <a id={section.Id} />
+                                <section.Component />
+                            </motion.div>
+                        ))}
                     </Stack>
                 </Container>
                 <Zoom

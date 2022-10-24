@@ -3,7 +3,7 @@ import { Box, Grid, IconButton, Typography } from "@mui/material";
 
 function Links() {
     return (
-        <Box id="links">
+        <Box>
             <Typography
                 variant="h4"
                 textAlign="center"

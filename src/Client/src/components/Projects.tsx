@@ -82,7 +82,7 @@ function Projects() {
     };
 
     return (
-        <Box id="projects" maxWidth="100%">
+        <Box maxWidth="100%">
             <Typography
                 variant="h4"
                 textAlign="center"
@@ -103,7 +103,7 @@ function Projects() {
                             sx={{
                                 width: 800,
                                 minWidth: "min(300px, 100vw)",
-                                maxWidth: "100%"
+                                maxWidth: "min(800px, 100%)"
 
                             }}
                         >
