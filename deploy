@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -azv --delete ./src/Client/dist/ http@jcannon.dev:/var/www/jcannon.dev
