@@ -1,5 +1,6 @@
 import { Article, GitHub, LinkedIn } from "@mui/icons-material";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
+import resumeUrl from "../assets/resume.pdf";
 
 function Links() {
     return (
@@ -58,7 +59,7 @@ function Links() {
                     }}
                     size={4}
                 >
-                    <IconButton href="/resume.pdf">
+                    <IconButton href={resumeUrl}>
                         <Article
                             sx={{
                                 fontSize: 56
