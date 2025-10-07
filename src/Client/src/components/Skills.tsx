@@ -13,9 +13,12 @@ import Sql from "devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg?r
 import ReactIcon from "devicon/icons/react/react-original.svg?react";
 import TypeScript from "devicon/icons/typescript/typescript-original.svg?react";
 import Windows from "devicon/icons/windows8/windows8-original.svg?react";
+import NestJS from "devicon/icons/nestjs/nestjs-original.svg?react";
+import Postgresql from "devicon/icons/postgresql/postgresql-original.svg?react";
+import AWS from "devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg?react";
+import PowerShell from "devicon/icons/powershell/powershell-original.svg?react";
 import { ReactElement } from "react";
 
-import PowerShell from "../assets/pwsh.svg?react";
 
 interface Skill {
     Name: string
@@ -128,6 +131,24 @@ const technologies: Skill[] = [
         Name: "Windows",
         Icon: <SvgIcon>
             <Windows />
+        </SvgIcon>
+    },
+    {
+        Name: "Nest.JS",
+        Icon: <SvgIcon>
+            <NestJS />
+        </SvgIcon>
+    },
+    {
+        Name: "PostgreSQL",
+        Icon: <SvgIcon>
+            <Postgresql />
+        </SvgIcon>
+    },
+    {
+        Name: "AWS",
+        Icon: <SvgIcon>
+            <AWS />
         </SvgIcon>
     }
 ];
