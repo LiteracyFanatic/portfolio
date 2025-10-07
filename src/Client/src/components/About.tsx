@@ -21,15 +21,15 @@ const About = forwardRef(function About(props, ref) {
                 rowSpacing={2}
             >
                 <Grid
-                    item
-                    xs={12}
-                    md={6}
                     sx={{
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                >
+                    size={{
+                        xs: 12,
+                        md: 6
+                    }}>
                     <Avatar
                         src={profile}
                         sx={{
@@ -39,15 +39,15 @@ const About = forwardRef(function About(props, ref) {
                     />
                 </Grid>
                 <Grid
-                    item
-                    xs={12}
-                    md={6}
                     sx={{
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center"
                     }}
-                >
+                    size={{
+                        xs: 12,
+                        md: 6
+                    }}>
                     <Typography variant="h5" gutterBottom>
                         Hi, I&apos;m Jordan.
                     </Typography>

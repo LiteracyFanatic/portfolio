@@ -1,21 +1,21 @@
 import { BarChart, Language } from "@mui/icons-material";
 import { Box, Chip, SvgIcon, Typography } from "@mui/material";
-import { ReactComponent as Bash } from "devicon/icons/bash/bash-original.svg";
-import { ReactComponent as CSharp } from "devicon/icons/csharp/csharp-original.svg";
-import { ReactComponent as DotNetCore } from "devicon/icons/dotnetcore/dotnetcore-original.svg";
-import { ReactComponent as FSharp } from "devicon/icons/fsharp/fsharp-original.svg";
-import { ReactComponent as Git } from "devicon/icons/git/git-original.svg";
-import { ReactComponent as JavaScript } from "devicon/icons/javascript/javascript-original.svg";
-import { ReactComponent as Linux } from "devicon/icons/linux/linux-original.svg";
-import { ReactComponent as MuiIcon } from "devicon/icons/materialui/materialui-original.svg";
-import { ReactComponent as Matlab } from "devicon/icons/matlab/matlab-original.svg";
-import { ReactComponent as Sql } from "devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg";
-import { ReactComponent as ReactIcon } from "devicon/icons/react/react-original.svg";
-import { ReactComponent as TypeScript } from "devicon/icons/typescript/typescript-original.svg";
-import { ReactComponent as Windows } from "devicon/icons/windows8/windows8-original.svg";
+import Bash from "devicon/icons/bash/bash-original.svg?react";
+import CSharp from "devicon/icons/csharp/csharp-original.svg?react";
+import DotNetCore from "devicon/icons/dotnetcore/dotnetcore-original.svg?react";
+import FSharp from "devicon/icons/fsharp/fsharp-original.svg?react";
+import Git from "devicon/icons/git/git-original.svg?react";
+import JavaScript from "devicon/icons/javascript/javascript-original.svg?react";
+import Linux from "devicon/icons/linux/linux-original.svg?react";
+import MuiIcon from "devicon/icons/materialui/materialui-original.svg?react";
+import Matlab from "devicon/icons/matlab/matlab-original.svg?react";
+import Sql from "devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg?react";
+import ReactIcon from "devicon/icons/react/react-original.svg?react";
+import TypeScript from "devicon/icons/typescript/typescript-original.svg?react";
+import Windows from "devicon/icons/windows8/windows8-original.svg?react";
 import { ReactElement } from "react";
 
-import { ReactComponent as PowerShell } from "../assets/pwsh.svg";
+import PowerShell from "../assets/pwsh.svg?react";
 
 interface Skill {
     Name: string

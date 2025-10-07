@@ -13,13 +13,12 @@ function Links() {
             </Typography>
             <Grid container>
                 <Grid
-                    item
-                    xs={4}
                     sx={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center"
                     }}
+                    size={4}
                 >
                     <IconButton href="https://github.com/LiteracyFanatic">
                         <GitHub
@@ -33,13 +32,12 @@ function Links() {
                     </Typography>
                 </Grid>
                 <Grid
-                    item
-                    xs={4}
                     sx={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center"
                     }}
+                    size={4}
                 >
                     <IconButton href="https://www.linkedin.com/in/jordanmcannon/">
                         <LinkedIn
@@ -53,13 +51,12 @@ function Links() {
                     </Typography>
                 </Grid>
                 <Grid
-                    item
-                    xs={4}
                     sx={{
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center"
                     }}
+                    size={4}
                 >
                     <IconButton href="/resume.pdf">
                         <Article
