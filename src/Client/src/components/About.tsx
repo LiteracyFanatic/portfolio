@@ -52,7 +52,7 @@ const About = forwardRef(function About(props, ref) {
                         Hi, I&apos;m Jordan.
                     </Typography>
                     <Typography>
-                        I&apos;m a fullstack developer specializing in .NET Core and React. I&apos;m passionate about functional programming, data visualization, and Linux. I learned a lot about technical computing during my time studying Mechanical Engineering. In my free time, I like to cook, study Japanese, and ride motorcycles.
+                        I&apos;m a fullstack developer specializing in .NET Core, Node.js, and React. I&apos;m passionate about functional programming, data visualization, and Linux. I learned a lot about technical computing during my time studying Mechanical Engineering and regularly develop software to help clients automate design calculations and CAD workflows. In my free time, I like to cook, study Japanese, and ride motorcycles.
                     </Typography>
                 </Grid>
             </Grid>
