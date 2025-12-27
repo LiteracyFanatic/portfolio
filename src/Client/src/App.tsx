@@ -3,24 +3,17 @@ import "@fontsource/roboto/latin-400.css";
 import "@fontsource/roboto/latin-500.css";
 import "@fontsource/roboto/latin-700.css";
 
-import { KeyboardArrowUp } from "@mui/icons-material";
 import {
     createTheme,
     CssBaseline,
-    Fab,
-    Stack,
-    ThemeProvider,
-    useScrollTrigger,
-    Zoom
+    ThemeProvider
 } from "@mui/material";
-import { Container } from "@mui/material";
-import { motion } from "framer-motion";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-import About from "./components/About";
 import Header from "./components/Header";
-import Links from "./components/Links";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import CadPortfolio from "./pages/CadPortfolio";
+import Home from "./pages/Home";
 
 const defaultTheme = createTheme({
     palette: {
@@ -53,75 +46,38 @@ const theme = createTheme(defaultTheme, {
 });
 
 function App() {
-    const trigger = useScrollTrigger({ disableHysteresis: true });
-
-    const sections = [
-        { Component: About, Id: "about" },
-        { Component: Projects, Id: "projects" },
-        { Component: Skills, Id: "skills" },
-        { Component: Links, Id: "links" }
-    ];
-
     return (
         <ThemeProvider theme={theme}>
-            <CssBaseline>
+            <CssBaseline />
+            <BrowserRouter>
+                <ScrollToHash />
                 <Header />
-                <Container
-                    maxWidth="md"
-                    sx={{
-                        marginY: 2
-                    }}
-                >
-                    <Stack
-                        spacing={12}
-                        alignItems="center"
-                        component={motion.div}
-                    >
-                        {sections.map((section, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{
-                                    opacity: 0,
-                                    scale: 0
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    scale: 1
-                                }}
-                                transition={{
-                                    duration: 0.7
-                                }}
-                                viewport={{
-                                    once: true,
-                                    margin: `${theme.mixins.toolbar.minHeight}px`
-                                }}
-                                style={{
-                                    maxWidth: "min(800px, 100%)"
-                                }}
-                            >
-                                <a id={section.Id} />
-                                <section.Component />
-                            </motion.div>
-                        ))}
-                    </Stack>
-                </Container>
-                <Zoom
-                    in={trigger}
-                >
-                    <Fab
-                        color="primary"
-                        sx={{
-                            position: "fixed",
-                            bottom: 16,
-                            right: 16
-                        }}
-                        onClick={() => window.scroll({ behavior: "smooth", top: 0 })}
-                    >
-                        <KeyboardArrowUp />
-                    </Fab>
-                </Zoom>
-            </CssBaseline>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/cad" element={<CadPortfolio />} />
+                </Routes>
+            </BrowserRouter>
         </ThemeProvider>
+    );
+}
+
+function ScrollToHash() {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!location.hash) {
+            window.scrollTo({ top: 0 });
+            return;
+        }
+
+        const element = document.querySelector(location.hash);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    }, [location.hash, location.pathname]);
+
+    return (
+        null
     );
 }
 

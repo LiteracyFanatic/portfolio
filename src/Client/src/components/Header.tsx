@@ -10,28 +10,33 @@ import {
     Typography
 } from "@mui/material";
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 interface Link {
     Label: string
-    Href: string
+    To: string
 }
 
 const links: Link[] = [
     {
         Label: "About",
-        Href: "#about"
+        To: "/#about"
     },
     {
         Label: "Projects",
-        Href: "#projects"
+        To: "/#projects"
     },
     {
         Label: "Skills",
-        Href: "#skills"
+        To: "/#skills"
     },
     {
         Label: "Links",
-        Href: "#links"
+        To: "/#links"
+    },
+    {
+        Label: "CAD",
+        To: "/cad"
     }
 ];
 
@@ -59,9 +64,10 @@ function Header() {
                     >
                         {links.map(link => (
                             <Button
-                                key={link.Href}
+                                key={link.To}
                                 color="inherit"
-                                href={link.Href}
+                                component={RouterLink}
+                                to={link.To}
                             >
                                 {link.Label}
                             </Button>
@@ -85,9 +91,9 @@ function Header() {
                     >
                         {links.map(link => (
                             <MenuItem
-                                key={link.Href}
-                                component="a"
-                                href={link.Href}
+                                key={link.To}
+                                component={RouterLink}
+                                to={link.To}
                                 onClick={() => setAnchorEl(null)}
                             >
                                 {link.Label}
